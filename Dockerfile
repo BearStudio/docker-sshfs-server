@@ -12,7 +12,9 @@ RUN apt-get update --quiet > /dev/null && \
 		apt-get clean && \
 		rm -rf /var/lib/apt/lists/*
 
-RUN useradd -d /home/datashared -m -s /bin/bash datashared
+RUN useradd -d /home/datashared -m -s /bin/bash datashared && \
+    mkdir /home/datashared/data/ && \
+    chown -R datashared:datashared /home/datashared/data/
 
 WORKDIR /home/datashared
 
