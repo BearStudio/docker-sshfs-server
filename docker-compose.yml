@@ -1,0 +1,11 @@
+sshfs:
+  image: bearstudio/sshfs-server
+  container_name: sshfs-data
+  restart: always
+  ports:
+   - "45632:22"
+  volumes:
+   - "~/data/weather-data/:/home/datashared/data/"
+  environment:
+   - SSH_KEYS= |
+             ssh-rsa C3OYB3NzaC1yc2EDTHKDAQABAAABAQDe7ujHReb3SM/zV91bw2xgXbT7Ic8AQ53t+6ZNBUghkk1VW9aMnpfhCZMM0lRIssjat+JuFEpd71KITLRTYo95p3Rf8IrrYDD4LPK8qPUPP9w+rkhIw643pvTheI/ysvW0AchH2tEnrv0i0DR/BJuts4pT7OzKIIrEb/4yQBG/swoGnH2KhQoi1hPprkFMl2fXxJ4vubj4R2D3PoSBf96JGHyfVEqLvXgTTG9k0OgAO/YJ8AI6UvtR/fXc/2q5qnUemyHNm3J8lso9UslSZ1n8AGGljOUyek1V/Z/L6z7sXj2zzt8VPifpTXOlih5a3w3DIKhiZ0EFozIYFzx6gQi7 example@example
