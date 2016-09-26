@@ -6,6 +6,6 @@ mkdir /var/run/sshd/
 mkdir /home/datashared/.ssh/
 
 # Insert public keys
-echo $SSH_KEYS > /home/datashared/.ssh/authorized_keys
+echo -e $SSH_KEYS > /home/datashared/.ssh/authorized_keys
 
 /usr/sbin/sshd -D
